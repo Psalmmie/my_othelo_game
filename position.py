@@ -34,11 +34,11 @@ class PlayerPosition:
         return f"({self.row}, {self.col})"
 
 
-#position1 = PlayerPosition(2,3)
+#position1 = PlayerPosition(3,3)
 
-#position2 = PlayerPosition(0,7)
+#position2 = PlayerPosition(8,0)
 
-#print(position1.is_valid())
+#print(position2.is_valid())
 
 #print(position1 == position2)
 
