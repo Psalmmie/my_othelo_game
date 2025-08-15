@@ -16,7 +16,11 @@ class Move:
 
         self.pawn = pawn # Stores which pawn is making the move (black or white).
 
-        self.flipped_position: List[PlayerPosition] = [] #The type hint List[PlayerPosition] means this is a list that should only contain PlayerPosition objects.
+        self.flipped_positions: List[PlayerPosition] = [] #The type hint List[PlayerPosition] means this is a list that should only contain PlayerPosition objects.
+
+        def __repr__(self):
+        
+            return f"Move(position={self.position}, pawn={self.pawn}, flips={len(self.flipped_positions)})"
 
 
 # Create a PlayerPosition object (example values)

@@ -111,20 +111,20 @@ class GameRules:
 
         # Calculate and apply the flip
 
-        flipped_positions = GameRules.get_flipped_positions(board, the_move.position, the_move.pawn)
+        flipped_positions = GameRules.get_flipped_positions(board, the_move.position, the_move.pawn.color)
 
         for pos in flipped_positions:
 
             new_board.set_cell(pos, the_move.pawn)
 
-        the_move.flipped_position = flipped_positions
+        the_move.flipped_positions = flipped_positions
 
         return new_board
 
     @staticmethod
-    def has_valid_moves(board: Board, pawn: Pawn) -> bool:
+    def has_valid_moves(board: Board, color: Color) -> bool:
         """Vérifie si un joueur a des coups valides"""
-        return len(GameRules.get_valid_moves(board, pawn)) > 0
+        return len(GameRules.get_valid_moves(board, color)) > 0
 
     @staticmethod
     def get_winner(board: Board) -> Optional[Pawn]:
@@ -148,25 +148,25 @@ class GameRules:
 
 
 # 1️⃣ Create a board
-#board = Board()
+board = Board()
 
 # 2️⃣ Place some pawns to simulate a real game state
-#board.set_cell(PlayerPosition(3, 3), Pawn(Color.WHITE))
-#board.set_cell(PlayerPosition(3, 4), Pawn(Color.BLACK))
-#board.set_cell(PlayerPosition(4, 3), Pawn(Color.BLACK))
-#board.set_cell(PlayerPosition(4, 4), Pawn(Color.WHITE))
+board.set_cell(PlayerPosition(3, 3), Pawn(Color.WHITE))
+board.set_cell(PlayerPosition(3, 4), Pawn(Color.BLACK))
+board.set_cell(PlayerPosition(4, 3), Pawn(Color.BLACK))
+board.set_cell(PlayerPosition(4, 4), Pawn(Color.WHITE))
 
 # 3️⃣ Get all valid moves for BLACK
-#valid_moves = GameRules.get_valid_moves(board, Color.BLACK)
-#print("Valid moves for BLACK:", valid_moves)
+valid_moves = GameRules.get_valid_moves(board, Color.BLACK)
+print("Valid moves for BLACK:", valid_moves)
 
 # 4️⃣ Choose one of the valid moves and create a Move object
-#if valid_moves:
-    #chosen_position = valid_moves[0]
-    #black_pawn = Pawn(Color.BLACK)
-    #move = Move(chosen_position, black_pawn)
+if valid_moves:
+    chosen_position = valid_moves[0]
+    black_pawn = Pawn(Color.BLACK)
+    move = Move(chosen_position, black_pawn)
 
     # 5️⃣ Apply the move
-    #new_board = GameRules.apply_move(board, move)
+    new_board = GameRules.apply_move(board, move)
 
-    #print("Flipped positions:", move.flipped_position)
+    print("Flipped positions:", move.flipped_positions)

@@ -72,7 +72,7 @@ class Board:
         return True
 
     
-    """ We need to track the score of the game at eachi point """
+    """ We need to track the score of the game at each point """
     """ We can create a count pawn method """
 
     def count_pawns(self, color: Color) -> int:
@@ -90,7 +90,7 @@ class Board:
         return count
 
 
-    """ To simulate possible moves without altering the real board, we can cretate a copy of the board"""
+    """ To simulate possible moves without altering the real board, we can create a copy of the board"""
     def copy(self) -> "Board":
 
         new_board = Board()

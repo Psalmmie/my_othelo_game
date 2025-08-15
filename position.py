@@ -15,6 +15,15 @@ class PlayerPosition:
 
         self.col = col
 
+
+    def __hash__(self):
+        return hash((self.row, self.col))
+
+
+    def __repr__(self):
+        return f"PlayerPosition(row={self.row}, col={self.col})"
+
+
     """ The following method checks the validity of a player position wrt the board """
 
     def is_valid(self, board_size: int = 8) -> bool:
