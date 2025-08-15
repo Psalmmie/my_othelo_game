@@ -148,25 +148,25 @@ class GameRules:
 
 
 # 1️⃣ Create a board
-board = Board()
+#board = Board()
 
 # 2️⃣ Place some pawns to simulate a real game state
-board.set_cell(PlayerPosition(3, 3), Pawn(Color.WHITE))
-board.set_cell(PlayerPosition(3, 4), Pawn(Color.BLACK))
-board.set_cell(PlayerPosition(4, 3), Pawn(Color.BLACK))
-board.set_cell(PlayerPosition(4, 4), Pawn(Color.WHITE))
+#board.set_cell(PlayerPosition(3, 3), Pawn(Color.WHITE))
+#board.set_cell(PlayerPosition(3, 4), Pawn(Color.BLACK))
+#board.set_cell(PlayerPosition(4, 3), Pawn(Color.BLACK))
+#board.set_cell(PlayerPosition(4, 4), Pawn(Color.WHITE))
 
 # 3️⃣ Get all valid moves for BLACK
-valid_moves = GameRules.get_valid_moves(board, Color.BLACK)
-print("Valid moves for BLACK:", valid_moves)
+#valid_moves = GameRules.get_valid_moves(board, Color.BLACK)
+#print("Valid moves for BLACK:", valid_moves)
 
 # 4️⃣ Choose one of the valid moves and create a Move object
-if valid_moves:
-    chosen_position = valid_moves[0]
-    black_pawn = Pawn(Color.BLACK)
-    move = Move(chosen_position, black_pawn)
+#if valid_moves:
+#    chosen_position = valid_moves[0]
+#    black_pawn = Pawn(Color.BLACK)
+#    move = Move(chosen_position, black_pawn)
 
     # 5️⃣ Apply the move
-    new_board = GameRules.apply_move(board, move)
+#    new_board = GameRules.apply_move(board, move)
 
-    print("Flipped positions:", move.flipped_positions)
+#    print("Flipped positions:", move.flipped_positions)
