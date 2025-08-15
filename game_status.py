@@ -10,5 +10,5 @@ class GameStatus(Enum):
 
 status = GameStatus.IN_PROGRESS
 
-print(status)
-print(status.value)
+#print(status)
+#print(status.value)
