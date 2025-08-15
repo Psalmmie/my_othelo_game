@@ -52,7 +52,7 @@ class Board:
 
             for col in range(self.BOARD_SIZE):
 
-                positions.append(PlayerPosition((row, col)))
+                positions.append(PlayerPosition(row, col))
 
         return positions
 
