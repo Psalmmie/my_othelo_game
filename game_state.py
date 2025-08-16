@@ -2,6 +2,7 @@ from  game_status import GameStatus
 from color import Color
 from pawn import Pawn
 from board import Board
+from game_timer import GameTimer
 
 class GameState:
 
@@ -20,6 +21,8 @@ class GameState:
         self.white_score = board.count_pawns(Color.WHITE)
         
         self.turn_number = 0
+        
+        self.timer = GameTimer()
     
     def copy(self) -> 'GameState':
         
@@ -32,12 +35,45 @@ class GameState:
         new_state.white_score = self.white_score
         
         new_state.turn_number = self.turn_number
+
+        new_state.timer = self.timer
         
         return new_state
     
     def is_terminal(self) -> bool:
         
         return self.status == GameStatus.FINISHED
+
+
+    def start_timer(self) -> None:
+        
+        """Start the game timer"""
+        
+        self.timer.start()
+
+    def pause_timer(self) -> None:
+        
+        """Pause the game timer"""
+        
+        self.timer.pause()
+
+    def resume_timer(self) -> None:
+        
+        """Resume the game timer"""
+        
+        self.timer.resume()
+
+    def stop_timer(self) -> float:
+        
+        """Stop the timer and return elapsed time"""
+        
+        return self.timer.stop()
+
+    def get_game_time(self) -> str:
+        
+        """Get formatted game time"""
+        
+        return self.timer.get_formatted_time()
 
 #Create initial game state
 #initial_board = Board()

@@ -12,6 +12,10 @@ class Pawn:
 
         return f"{self.color}"
 
+    def __rich__(self) -> str:
+
+        return self.color.__rich__()
+
 #pawn1 = Pawn(Color.BLACK)
 #pawn2 = Pawn(Color.WHITE)
 

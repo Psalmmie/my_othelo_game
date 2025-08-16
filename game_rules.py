@@ -127,7 +127,7 @@ class GameRules:
         return len(GameRules.get_valid_moves(board, color)) > 0
 
     @staticmethod
-    def get_winner(board: Board) -> Optional[Pawn]:
+    def get_winner(board: Board) -> Optional[Color]:
 
         # Determine the winner
 
