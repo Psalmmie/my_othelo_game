@@ -1,6 +1,6 @@
-from console_ui import ConsoleUI
-from player_strategy import HumanStrategy
-from game_controller import GameController
+from ui.console_ui import ConsoleUI
+from players.player_strategy import HumanStrategy
+from controllers.game_controller import GameController
 
 
 def main():
